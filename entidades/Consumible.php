@@ -33,7 +33,7 @@ class Consumible
 
 	public function toString()
 	{
-		return '{"nombre":"' . $this->getNombre() . '","precio":"' . $this->getPrecio() . '",';
+		return '{"nombre":"' . $this->getNombre() . '","precio":' . $this->getPrecio() . '}';
 	}
 }
 ?>

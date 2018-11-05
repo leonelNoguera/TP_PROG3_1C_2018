@@ -4,6 +4,7 @@ include_once './entidades/Persona.php';
 include_once './entidades/Restaurante.php';
 include_once './entidades/Mesa.php';
 include_once './entidades/Pedido.php';
+include_once './entidades/Consumible.php';
 
 /*$caracteres = "_-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 for ($i=0; $i < strlen($caracteres); $i++)
@@ -47,8 +48,10 @@ $c1->setCodigoMesa("abc56");
 /*El cliente realiza un pedido.*/
 $p1 = new Pedido();
 $p1->agregarCliente($c1);
-$p1->agregarElemento("Fideos con salsa");
-$p1->agregarElemento("Gaseosa Fanta");
+$co1 = new Consumible("Fideos con salsa", 20.0);
+$p1->agregarConsumible($co1);
+$co2 = new Consumible("Gaseosa Fanta", 20.0);
+$p1->agregarConsumible($co2);
 /*El pedido es registrado.*/
 $r->entraPedido($p1);
 

@@ -2,7 +2,7 @@
 class Mesa
 {
 	private $codigo;
-	private $clientes = array();
+	//private $clientes = array();
 
 	function __construct($codigo = NULL)
 	{
@@ -12,10 +12,10 @@ class Mesa
 		}
 	}
 
-	public function agregarCliente($cliente)
+	/*public function agregarCliente($cliente)
 	{
 		array_push($this->clientes, $cliente);
-	}
+	}*/
 
 	public function setCodigo($codigo)
 	{
@@ -32,6 +32,11 @@ class Mesa
 	public function getCodigo()
 	{
 		return $this->codigo;
+	}
+
+	public function toString()
+	{
+		return '{"codigo":"' . $this->getCodigo() . '"}';
 	}
 }
 ?>

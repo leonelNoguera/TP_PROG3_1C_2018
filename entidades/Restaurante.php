@@ -61,6 +61,13 @@ class Restaurante
 			$retorno .= $p->toString() . "</br>";
 		}
 
+		$retorno .= "</br>Mesas:</br></br>";
+
+		foreach ($this->getMesas() as $m)
+		{
+			$retorno .= $m->toString() . "</br>";
+		}
+
 		return $retorno;
 	}
 }

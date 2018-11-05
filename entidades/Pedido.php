@@ -2,8 +2,8 @@
 class Pedido
 {
 	private $codigoMesa;
-	private $pendiente = TRUE;
-	private $elementos = array();
+	//private $pendiente = TRUE;
+	private $coonsumibles = array();
 	private $clientes = array();
 
 	function __construct($clientes = NULL, $codigoMesa = NULL)
@@ -21,9 +21,9 @@ class Pedido
 		}
 	}
 
-	public function agregarElemento($e)
+	public function agregarConsumible($c)
 	{
-		array_push($this->elementos, $e);
+		array_push($this->coonsumibles, $c);
 	}
 
 	public function agregarCliente($cliente)
@@ -50,9 +50,9 @@ class Pedido
 		return $this->clientes;
 	}
 
-	public function getElementos()
+	public function getConsumibles()
 	{
-		return $this->elementos;
+		return $this->coonsumibles;
 	}
 
 	public function toString()
@@ -64,10 +64,15 @@ class Pedido
 			$retorno .= $c->toString();
 		}
 
-		foreach ($this->getElementos() as $e)
+		$retorno .= ',"consumibles": ';
+
+		foreach ($this->getConsumibles() as $co)
 		{
-			$retorno .= $e . ",";
+			$retorno .= $co->toString();
 		}
+
+		$retorno .= '}';
+		//$retorno .= '"pendiente":"' . $this->getCodigoMesa() . '"}';
 
 		return $retorno;
 	}
