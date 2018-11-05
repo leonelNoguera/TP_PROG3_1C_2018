@@ -32,5 +32,36 @@ class Restaurante
 	{
 		return $this->mesas;
 	}
+
+	public function getPedidos()
+	{
+		return $this->pedidos;
+	}
+
+	public function getClientes()
+	{
+		return $this->clientes;
+	}
+
+	public function mostrarInfo()
+	{
+		$retorno = "<strong>Informacion del restaurante.</strong></br>";
+		
+		$retorno .= "Clientes:</br></br>";
+
+		foreach ($this->getClientes() as $c)
+		{
+			$retorno .= $c->toString() . "</br>";
+		}
+
+		$retorno .= "</br>Pedidos:</br></br>";
+
+		foreach ($this->getPedidos() as $p)
+		{
+			$retorno .= $p->toString() . "</br>";
+		}
+
+		return $retorno;
+	}
 }
 ?>

@@ -11,14 +11,19 @@ class Cliente extends Persona
 		$this->codigoMesa = $codigoMesa;
 	}
 
-	public function setMesa($codigoMesa)
+	public function setCodigoMesa($codigoMesa)
 	{
 		$this->codigoMesa = $codigoMesa;
 	}
 
-	public function getMesa()
+	public function getCodigoMesa()
 	{
 		return $this->codigoMesa;
+	}
+
+	public function toString()
+	{
+		return parent::toString() . '"codigoMesa":"' . $this->getCodigoMesa() . '"}';
 	}
 }
 ?>

@@ -32,7 +32,7 @@ class Persona
 
 	public function toString()
 	{
-		return '{"nombre":"' . $this->getNombre() . '","apellido":' . $this->getApellido() . '",';/* + ',"marca":"' + this.marca + '","precio":' + this.precio + ',';*/
+		return '{"nombre":"' . $this->getNombre() . '","apellido":"' . $this->getApellido() . '",';
 	}
 }
 ?>
